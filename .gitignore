@@ -38,6 +38,8 @@ models/*.pkl
 models/*.h5
 models/*.bin
 !models/.gitkeep
+!models/gradient_boosting.joblib
+!models/preprocessor.joblib
 
 # NOTE: Plot images in top-level `plots/` are intentionally tracked for documentation.
 # If you later want to exclude them, uncomment the following pattern:

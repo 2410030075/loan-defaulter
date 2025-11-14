@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: loan-defaulter
+    env: python
+    plan: starter
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run src/app_streamlit.py --server.port=$PORT --server.address=0.0.0.0
+    autoDeploy: true
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: STREAMLIT_BROWSER_GATHERUSAGESTATS
+        value: "false"
