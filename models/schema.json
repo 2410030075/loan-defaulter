@@ -1,0 +1,25 @@
+{
+  "numeric_features": [
+    {"name": "loan_amount", "default": 25000, "min": 1000, "max": 100000},
+    {"name": "interest_rate", "default": 7.5, "min": 1.0, "max": 30.0},
+    {"name": "income", "default": 60000, "min": 10000, "max": 250000},
+    {"name": "debt_to_income", "default": 0.3, "min": 0.0, "max": 1.0},
+    {"name": "loan_to_income", "default": 0.4, "min": 0.0, "max": 2.0},
+    {"name": "loan_term", "default": 36, "min": 12, "max": 60},
+    {"name": "Credit_Score", "default": 700, "min": 300, "max": 850},
+    {"name": "LTV", "default": 80, "min": 0, "max": 150},
+    {"name": "age", "default": 35, "min": 18, "max": 100}
+  ],
+  "categorical_features": [
+    {"name": "Education", "options": ["High School", "Bachelor", "Master", "PhD"]},
+    {"name": "Employment_Type", "options": ["Full-time", "Part-time", "Self-employed", "Unemployed"]},
+    {"name": "Property_Type", "options": ["Residential", "Commercial", "Mixed-Use"]},
+    {"name": "Marital_Status", "options": ["Single", "Married", "Divorced", "Widowed"]},
+    {"name": "Gender", "options": ["Male", "Female"]},
+    {"name": "Has_Guarantor", "options": ["Yes", "No"]}
+  ],
+  "target": {
+    "name": "Status",
+    "labels": ["No Default", "Default"]
+  }
+}

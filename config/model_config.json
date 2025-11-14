@@ -1,0 +1,74 @@
+{
+    "data": {
+        "target_column": "Status",
+        "test_size": 0.2,
+        "random_state": 42
+    },
+    "preprocessing": {
+        "numeric_imputer_strategy": "median",
+        "categorical_imputer_strategy": "most_frequent",
+        "scale_numeric_features": true
+    },
+    "models": {
+        "logistic_regression": {
+            "enabled": true,
+            "params": {
+                "max_iter": 1000,
+                "random_state": 42
+            },
+            "grid_search": {
+                "C": [0.01, 0.1, 1, 10, 100],
+                "class_weight": [null, "balanced"]
+            }
+        },
+        "random_forest": {
+            "enabled": true,
+            "params": {
+                "random_state": 42
+            },
+            "grid_search": {
+                "n_estimators": [100, 200],
+                "max_depth": [null, 10, 20],
+                "min_samples_split": [2, 5, 10]
+            }
+        },
+        "gradient_boosting": {
+            "enabled": true,
+            "params": {
+                "random_state": 42
+            },
+            "grid_search": {
+                "n_estimators": [100, 200],
+                "learning_rate": [0.01, 0.1],
+                "max_depth": [3, 5]
+            }
+        },
+        "xgboost": {
+            "enabled": true,
+            "params": {
+                "random_state": 42
+            },
+            "grid_search": {
+                "n_estimators": [100, 200],
+                "learning_rate": [0.01, 0.1],
+                "max_depth": [3, 5]
+            }
+        },
+        "lightgbm": {
+            "enabled": true,
+            "params": {
+                "random_state": 42
+            },
+            "grid_search": {
+                "n_estimators": [100, 200],
+                "learning_rate": [0.01, 0.1],
+                "max_depth": [3, 5]
+            }
+        }
+    },
+    "evaluation": {
+        "metrics": ["accuracy", "precision", "recall", "f1", "roc_auc"],
+        "cv_folds": 5,
+        "scoring": "f1"
+    }
+}

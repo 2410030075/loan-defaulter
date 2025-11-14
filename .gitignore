@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+.ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data files
+data/*.csv
+data/*.zip
+data/*.parquet
+data/*.pkl
+!data/.gitkeep
+
+# Model files
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/*.bin
+!models/.gitkeep
+
+# Results
+results/plots/*.png
+results/plots/*.jpg
+results/plots/*.svg
+!results/plots/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Local configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
