@@ -43,11 +43,15 @@ def load_preprocessor():
 @st.cache_data
 def load_schema():
     schema_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models', 'schema.json')
+    if os.path.exists(schema_path):
+        with open(schema_path, 'r') as f:
+            return json.load(f)
+    raise FileNotFoundError("schema.json not found in the models directory.")
 # Initialize SHAP explainer
 @st.cache_resource
-def get_explainer(model):
-    if hasattr(model, 'estimators_') or 'RandomForest' in str(type(model)) or 'GradientBoosting' in str(type(model)):
-        return shap.TreeExplainer(model)
+def get_explainer(_model):
+    if hasattr(_model, 'estimators_') or 'RandomForest' in str(type(_model)) or 'GradientBoosting' in str(type(_model)):
+        return shap.TreeExplainer(_model)
     else:
         return None
 
