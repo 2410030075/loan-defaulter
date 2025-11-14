@@ -2,16 +2,20 @@ services:
   - type: web
     name: loan-defaulter
     env: python
-    plan: starter
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    plan: free
+    pythonVersion: 3.10
+    buildCommand: |
+      python -m pip install --upgrade pip
+      python -m pip install -r requirements.txt
+      python -m pip install streamlit
+      python -m pip show streamlit
     startCommand: python -m streamlit run src/app_streamlit.py --server.port=$PORT --server.address=0.0.0.0
     autoDeploy: true
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
-      - key: STREAMLIT_BROWSER_GATHERUSAGESTATS
-        value: "false"
       - key: STREAMLIT_SERVER_HEADLESS
         value: "true"
-    # Specify Python version explicitly for deterministic builds
-    pythonVersion: 3.10
+      - key: STREAMLIT_BROWSER_GATHERUSAGESTATS
+        value: "false"
+    healthCheckPath: /
