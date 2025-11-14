@@ -39,6 +39,10 @@ models/*.h5
 models/*.bin
 !models/.gitkeep
 
+# NOTE: Plot images in top-level `plots/` are intentionally tracked for documentation.
+# If you later want to exclude them, uncomment the following pattern:
+# plots/*.png
+
 # Results
 results/plots/*.png
 results/plots/*.jpg
